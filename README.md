@@ -12,7 +12,7 @@ yarn add basic-auth-for-cloudflare-pages-middleware
 
 ## Usage
 
-### add "functions/\_middelware.js"
+### add "functions/\_middleware.js"
 
 directory structure:
 
