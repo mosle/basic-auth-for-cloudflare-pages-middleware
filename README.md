@@ -31,7 +31,7 @@ like
 ---
 filename: functions/_middleware.js
 ---
-import createBasicAuthHandler from "basic-auth-for-cloudflare-pages-middleware";
+import {createBasicAuthHandler} from "basic-auth-for-cloudflare-pages-middleware";
 export const onRequest = [createBasicAuthHandler({ name: "test", password: "test" })];
 ```
 
