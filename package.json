@@ -1,12 +1,12 @@
 {
   "name": "basic-auth-for-cloudflare-pages-middleware",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Basic Authentication for cloudflare pages middleware",
   "type": "module",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
   "publishConfig": {
-    "access": "public" 
+    "access": "public"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
