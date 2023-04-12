@@ -28,11 +28,13 @@ directory structure:
 like
 
 ```js
----
-filename: functions/_middleware.js
----
-import {createBasicAuthHandler} from "basic-auth-for-cloudflare-pages-middleware";
-export const onRequest = [createBasicAuthHandler({ name: "test", password: "test" })];
+// ---
+// filename: functions/_middleware.js
+// ---
+import { createBasicAuthHandler } from "basic-auth-for-cloudflare-pages-middleware";
+export const onRequest = [
+  createBasicAuthHandler({ name: "test", password: "test" }),
+];
 ```
 
 see https://developers.cloudflare.com/pages/platform/functions
