@@ -2,7 +2,7 @@ type Credentials = {
   name: string;
   password: string;
 };
-const parse = (string: string | undefined | null): Credentials | undefined => {
+export const parse = (string: string | undefined | null): Credentials | undefined => {
   if (string == undefined || string == null) return;
   const matched = /^ *(?:[Bb][Aa][Ss][Ii][Cc]) +([A-Za-z0-9._~+/-]+=*) *$/.exec(string);
   if (!matched) {
@@ -15,7 +15,7 @@ const parse = (string: string | undefined | null): Credentials | undefined => {
   return { name: userPass[1], password: userPass[2] };
 };
 
-const unauthorized = (body: string): Response => {
+export const unauthorized = (body: string): Response => {
   return new Response(body, {
     status: 401,
     statusText: "'Authentication required.'",
