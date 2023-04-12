@@ -1,0 +1,26 @@
+name: Publish NPM package
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16.x"
+      - name: Bump version and publish
+        env:
+          NPM_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          npm version patch -m "Bump version to %s [skip ci]"
+          git push origin HEAD:main
+          yarn install
+          yarn prepare
+          yarn publish --access public
