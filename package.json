@@ -1,6 +1,6 @@
 {
   "name": "basic-auth-for-cloudflare-pages-middleware",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Basic Authentication for cloudflare pages middleware",
   "type": "module",
   "main": "./build/index.js",
